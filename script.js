@@ -12,8 +12,12 @@ sketchPad.style.display = "grid";
 // Listen for slider value changes
 slider.addEventListener("input", getSlider);
 
+slider.addEventListener("change", restart);
+
+
 // set the initial number of boxes on start
 getSquares(slider.value);
+
 
 // update slider value on user input
 function getSlider() {
@@ -36,14 +40,32 @@ function getSquares(rows = 16) {
         sketchPad.appendChild(box);
     }
     colorBox('purple')
+    // slider.addEventListener("change", () => { box.style.background = "" })
 }
 
+// function to color each highlighted box
 function colorBox(color = "black") {
     let boxes = document.querySelectorAll(".box");
 
+
+    function colorChange(box) {
+        box.style.background = `${color}`
+    }
+
+
     boxes.forEach((box) => {
-        box.addEventListener('mouseover', () => { box.style.background = `${color}` })
+        box.addEventListener('mouseover', () => { colorChange(box) })
     })
+
+    // boxes.forEach((box) => {
+    //     box.addEventListener('mouseover', () => { box.style.background = `${color}` })
+    // })
+}
+
+// function to restart sketch-pad after new user input
+function restart() {
+    let boxes = document.querySelectorAll(".box");
+    boxes.forEach((box) => { box.style.background = "none" })
 }
 
 
