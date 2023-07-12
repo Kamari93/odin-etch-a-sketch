@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 25px 200px;
+    padding: 10px 200px;
     /* overflow-y: hidden; */
     /**hide vertical*/
     overflow-x: hidden;
