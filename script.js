@@ -38,14 +38,14 @@ function getsquares(rows = 16) {
         box.style.textAlign = "center";
         sketchPad.appendChild(box);
     }
-    colorBox()
+    colorBox('purple')
 }
 
-function colorBox() {
+function colorBox(color = "black") {
     let boxes = document.querySelectorAll(".box");
 
     boxes.forEach((box) => {
-        box.addEventListener('mouseover', () => { box.style.background = 'black' })
+        box.addEventListener('mouseover', () => { box.style.background = `${color}` })
     })
 }
 
