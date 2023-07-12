@@ -33,9 +33,6 @@ function getsquares(rows = 16) {
         box = document.createElement("div");
         box.classList.add("box");
         box.style.outline = "solid grey";
-        // box.textContent = `${i}`;
-        box.setAttribute("id", `${i}`);
-        box.style.textAlign = "center";
         sketchPad.appendChild(box);
     }
     colorBox('purple')
