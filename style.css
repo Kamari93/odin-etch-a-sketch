@@ -1,0 +1,93 @@
+body {
+    background: rgb(170, 219, 219);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 25px 200px;
+    /* overflow-y: hidden; */
+    /**hide vertical*/
+    overflow-x: hidden;
+    /**hide horizontal*/
+}
+
+.title {
+    margin-bottom: -30px;
+    margin-left: 140px;
+}
+
+.title h1 {
+    font-size: 70px;
+    letter-spacing: 9px;
+    font-weight: 800;
+}
+
+.main-container {
+    background: rgb(195, 201, 219);
+    display: flex;
+    height: 90vh;
+    width: 90vw;
+    gap: 50px;
+}
+
+.side-btns {
+    display: flex;
+    flex-direction: column;
+    background: rgb(114, 114, 171);
+    gap: 20px;
+    height: 500px;
+    width: 350px;
+    align-items: center;
+}
+
+/* .sketch-pad {
+    display: grid;
+    flex-wrap: wrap;
+    background: rgb(138, 189, 138);
+    height: 500px;
+    width: 600px;
+} */
+
+/* .sketch-pad {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 500px;
+    width: 600px;
+    background: rgb(138, 189, 138);
+} */
+
+.sketch-pad {
+    height: 500px;
+    width: 600px;
+    background: rgb(138, 189, 138);
+}
+
+.color-picker {
+    margin-top: 10%;
+    border-radius: 50%;
+    height: 25%;
+    width: 35%;
+}
+
+button {
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label {
+    margin-top: auto;
+    margin-bottom: -15px;
+}
+
+input {
+    width: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
