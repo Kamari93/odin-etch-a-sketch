@@ -13,19 +13,19 @@ sketchPad.style.display = "grid";
 slider.addEventListener("input", getSlider);
 
 // set the initial number of boxes on start
-getsquares(slider.value);
+getSquares(slider.value);
 
 // update slider value on user input
 function getSlider() {
     console.log(slider.value);
     dimensions.textContent = `${slider.value} x ${slider.value}`;
     // change number of squares in sketchpad
-    getsquares(slider.value);
+    getSquares(slider.value);
 }
 
 
 // function to get the total squares of sketch pad
-function getsquares(rows = 16) {
+function getSquares(rows = 16) {
     let columns = rows;
     sketchPad.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
     sketchPad.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
