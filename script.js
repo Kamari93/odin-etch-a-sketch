@@ -23,6 +23,7 @@ function getSlider() {
     getsquares(slider.value);
 }
 
+
 // function to get the total squares of sketch pad
 function getsquares(rows = 16) {
     let columns = rows;
@@ -37,4 +38,15 @@ function getsquares(rows = 16) {
         box.style.textAlign = "center";
         sketchPad.appendChild(box);
     }
+    colorBox()
 }
+
+function colorBox() {
+    let boxes = document.querySelectorAll(".box");
+
+    boxes.forEach((box) => {
+        box.addEventListener('mouseover', () => { box.style.background = 'black' })
+    })
+}
+
+
