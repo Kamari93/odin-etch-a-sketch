@@ -39,7 +39,9 @@ function getSquares(rows = 16) {
         box.style.outline = "solid grey";
         sketchPad.appendChild(box);
     }
-    colorBox('purple')
+    random = getRainbow();
+    random;
+    // colorBox(random)
     // slider.addEventListener("change", () => { box.style.background = "" })
 }
 
@@ -47,14 +49,18 @@ function getSquares(rows = 16) {
 function colorBox(color = "black") {
     let boxes = document.querySelectorAll(".box");
 
-
     function colorChange(box) {
         box.style.background = `${color}`
     }
 
-
     boxes.forEach((box) => {
-        box.addEventListener('mouseover', () => { colorChange(box) })
+        box.addEventListener('mousemove', (e) => {
+            if (e.buttons === 1) {
+                //this cancel the event to propagate/spread aka drag the selection
+                e.preventDefault();
+                colorChange(box);
+            }
+        })
     })
 
     // boxes.forEach((box) => {
@@ -68,4 +74,13 @@ function restart() {
     boxes.forEach((box) => { box.style.background = "none" })
 }
 
+// function to get random rgb color 
+function getRainbow() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let randomColor = `rgb(${r}, ${g}, ${b})`;
+    // return randomColor
+    return colorBox(randomColor)
+}
 
