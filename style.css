@@ -53,8 +53,7 @@ body {
     height: 500px;
     width: 600px;
     background: rgb(255, 252, 252);
-    /* border: 2px solid gray; */
-    /* box-shadow: 5px 5px grey; */
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 #color-picker {
