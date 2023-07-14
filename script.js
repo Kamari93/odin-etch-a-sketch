@@ -2,9 +2,20 @@ console.log("Keep Going 🍊");
 
 // DOM Manipulation
 const sketchPad = document.querySelector(".sketch-pad");
-const slider = document.querySelector("input");
+const slider = document.querySelector(".dimensions");
 const dimensions = document.querySelector("label");
+let colorPicker = document.querySelector("#color-picker");
+let colorContainer = document.querySelector(".color-picker")
 dimensions.textContent = `${slider.value} x ${slider.value} `;
+colorPicker.style.background = colorPicker.value;
+// colorContainer.style.background = colorPicker.value;
+
+colorPicker.addEventListener("change", () => {
+    console.log(colorPicker.value);
+    let newColor = colorPicker.value;
+    colorPicker.style.background = newColor;
+});
+
 
 // set the sketch-pad to display grid
 sketchPad.style.display = "grid";
@@ -76,11 +87,15 @@ function restart() {
 
 // function to get random rgb color 
 function getRainbow() {
+    let boxes = document.querySelectorAll(".box");
+
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     let randomColor = `rgb(${r}, ${g}, ${b})`;
     // return randomColor
     return colorBox(randomColor)
+
+    // boxes.forEach((box) => { colorBox(randomColor) })
 }
 
