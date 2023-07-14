@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px 200px;
+    padding: -10px 200px;
     /* overflow-y: hidden; */
     /**hide vertical*/
     overflow-x: hidden;
@@ -31,6 +31,7 @@ body {
     height: 90vh;
     width: 90vw;
     gap: 50px;
+    margin-bottom: -80px;
 }
 
 .side-btns {
@@ -132,4 +133,15 @@ input[type=color] {
 
 input[type="color"]::-webkit-color-swatch {
     border: none;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px 50px;
+    margin-top: auto;
+    margin-left: 180px;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
