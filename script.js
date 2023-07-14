@@ -3,7 +3,7 @@ console.log("Keep Going 🍊");
 // DOM Manipulation
 const sketchPad = document.querySelector(".sketch-pad");
 const slider = document.querySelector(".dimensions");
-const dimensions = document.querySelector("label");
+const dimensions = document.querySelector(".box-size");
 let colorPicker = document.querySelector("#color-picker");
 let colorModeButton = document.querySelector(".color-mode");
 let rainbowButton = document.querySelector(".rainbow");
@@ -12,6 +12,7 @@ let clearButton = document.querySelector(".clear-btn");
 let buttons = document.querySelectorAll("button");
 dimensions.textContent = `${slider.value} x ${slider.value} `;
 colorPicker.value = '#1d7177';
+// colorPicker.value = '#d36536';
 colorPicker.style.background = colorPicker.value;
 
 // Add event listener to each button

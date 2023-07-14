@@ -17,13 +17,20 @@ body {
 .title {
     margin-bottom: -30px;
     margin-left: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .title h1 {
     font-size: 70px;
     letter-spacing: 9px;
     font-weight: 800;
+    /* width: 900px; */
+    width: 100%;
 }
+
+
 
 .main-container {
     /* background: rgb(195, 201, 219); */

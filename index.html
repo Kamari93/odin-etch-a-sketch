@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="title"><h1>Etch-A-Sketch</h1></div>
+    <div class="title">
+        <h1>Etch-A-Sketch</h1>
+        <!-- <div class="toggle-container">
+            <span>Dark Mode</span>
+            <label class="toggle-label">
+              <input type="checkbox" id="toggle" />
+              <span class="toggle-slider"></span>
+            </label>
+          </div> -->
+    </div>
     <div class="main-container">
         <div class="side-btns">
             <!-- <button class="color-picker"><input class="color-picker" type="color"></button> -->
@@ -16,11 +25,12 @@
             <button class="rainbow">Rainbow Mode</button>
             <button class="eraser">Eraser</button>
             <button class="clear-btn">Clear</button>
-            <label for="box-size"></label>
+            <label class="box-size" for="box-size"></label>
             <input class="dimensions" type="range" id="box-size" name="box-size" min="1" max="64" value="16">
         </div>
         <div class="sketch-pad"></div>
     </div>
+    <div class="footer">Copyright &copy Kamari93 The Odin Project 2023</div>
 </body>
 <script src="script.js"></script>
 </html>
