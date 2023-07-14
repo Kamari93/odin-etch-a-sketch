@@ -6,10 +6,12 @@ const slider = document.querySelector(".dimensions");
 const dimensions = document.querySelector("label");
 let colorPicker = document.querySelector("#color-picker");
 let colorModeButton = document.querySelector(".color-mode");
+let rainbowButton = document.querySelector(".rainbow");
 let eraseButton = document.querySelector(".eraser");
 let clearButton = document.querySelector(".clear-btn");
 let buttons = document.querySelectorAll("button");
 dimensions.textContent = `${slider.value} x ${slider.value} `;
+colorPicker.value = '#45524a';
 colorPicker.style.background = colorPicker.value;
 
 // Add event listener to each button
@@ -39,6 +41,11 @@ let picker = colorPicker.addEventListener("change", () => {
         colorBox(colorPicker.value)
     }
 });
+
+// function for random color
+rainbowButton.addEventListener("click", () => {
+    getRainbow()
+})
 
 // function to erase a div's background
 eraseButton.addEventListener("click", () => {
@@ -125,8 +132,10 @@ function getRainbow() {
     let b = Math.floor(Math.random() * 256);
     let randomColor = `rgb(${r}, ${g}, ${b})`;
     // return randomColor
-    return colorBox(randomColor)
+    // return colorBox(randomColor)
 
-    // boxes.forEach((box) => { colorBox(randomColor) })
+    boxes.forEach((box) => { box.addEventListener('mousemove', () => { colorBox(randomColor) }) })
+    // boxes.forEach((box) => { box.addEventListener('mousemove', () => {box.style.background = randomColor})
+    // boxes.forEach((box) => { box.addEventListener('mousemove', () => { box.style.background = randomColor }) })
 }
 
