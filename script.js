@@ -11,7 +11,7 @@ let eraseButton = document.querySelector(".eraser");
 let clearButton = document.querySelector(".clear-btn");
 let buttons = document.querySelectorAll("button");
 dimensions.textContent = `${slider.value} x ${slider.value} `;
-colorPicker.value = '#45524a';
+colorPicker.value = '#1d7177';
 colorPicker.style.background = colorPicker.value;
 
 // Add event listener to each button

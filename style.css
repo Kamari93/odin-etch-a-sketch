@@ -71,6 +71,11 @@ body {
     width: 25%;
 }
 
+#color-picker:hover {
+    cursor: pointer;
+    border: 3px solid rgb(226, 161, 22);
+}
+
 button {
     width: 70%;
     padding: 10px;
@@ -99,6 +104,7 @@ label {
     margin-bottom: auto;
 }
 
+/* input styling to remove default webkit */
 input[type=range] {
     -webkit-appearance: none;
 }
@@ -119,4 +125,12 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 50%;
     background: rgb(73, 70, 70);
     margin-top: -11px;
+}
+
+input[type=color] {
+    -webkit-appearance: none;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
 }
