@@ -43,24 +43,10 @@ body {
     align-items: center;
 }
 
-/* .sketch-pad {
-    display: grid;
-    flex-wrap: wrap;
-    background: rgb(138, 189, 138);
-    height: 500px;
-    width: 600px;
-} */
-
-/* .sketch-pad {
-    display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    height: 500px;
-    width: 600px;
-    background: rgb(138, 189, 138);
-} */
+.selected {
+    background-color: rgb(73, 70, 70);
+    color: white;
+}
 
 .sketch-pad {
     height: 500px;

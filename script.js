@@ -5,17 +5,51 @@ const sketchPad = document.querySelector(".sketch-pad");
 const slider = document.querySelector(".dimensions");
 const dimensions = document.querySelector("label");
 let colorPicker = document.querySelector("#color-picker");
-let colorContainer = document.querySelector(".color-picker")
+let colorModeButton = document.querySelector(".color-mode");
+let eraseButton = document.querySelector(".eraser");
+let clearButton = document.querySelector(".clear-btn");
+let buttons = document.querySelectorAll("button");
 dimensions.textContent = `${slider.value} x ${slider.value} `;
 colorPicker.style.background = colorPicker.value;
-// colorContainer.style.background = colorPicker.value;
 
-colorPicker.addEventListener("change", () => {
+// Add event listener to each button
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+        // Remove 'selected' class from all buttons
+        for (var j = 0; j < buttons.length; j++) {
+            buttons[j].classList.remove("selected");
+        }
+
+        // Add 'selected' class to the clicked button
+        this.classList.add("selected");
+    });
+}
+
+// function for color picker button selector
+colorModeButton.addEventListener("click", () => {
+    colorBox(colorPicker.value);
+})
+
+// function that allows you to change color of squares
+let picker = colorPicker.addEventListener("change", () => {
     console.log(colorPicker.value);
     let newColor = colorPicker.value;
     colorPicker.style.background = newColor;
+    if (colorModeButton.classList.contains('selected')) {
+        colorBox(colorPicker.value)
+    }
 });
 
+// function to erase a div's background
+eraseButton.addEventListener("click", () => {
+    colorBox('transparent');
+})
+
+// function to clear sketchpad
+clearButton.addEventListener("click", () => {
+    let boxes = document.querySelectorAll(".box");
+    boxes.forEach((box) => box.style.background = 'none');
+})
 
 // set the sketch-pad to display grid
 sketchPad.style.display = "grid";
@@ -50,9 +84,6 @@ function getSquares(rows = 16) {
         box.style.outline = "solid grey";
         sketchPad.appendChild(box);
     }
-    random = getRainbow();
-    random;
-    // colorBox(random)
     // slider.addEventListener("change", () => { box.style.background = "" })
 }
 
