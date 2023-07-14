@@ -1,5 +1,5 @@
 body {
-    background: rgb(170, 219, 219);
+    background: rgb(206, 212, 212);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     min-height: 100vh;
@@ -26,7 +26,7 @@ body {
 }
 
 .main-container {
-    background: rgb(195, 201, 219);
+    /* background: rgb(195, 201, 219); */
     display: flex;
     height: 90vh;
     width: 90vw;
@@ -36,13 +36,14 @@ body {
 .side-btns {
     display: flex;
     flex-direction: column;
-    background: rgb(114, 114, 171);
+    /* background: rgb(114, 114, 171); */
     gap: 20px;
     height: 500px;
     width: 350px;
     align-items: center;
 }
 
+/* for the buttons when selected */
 .selected {
     background-color: rgb(73, 70, 70);
     color: white;
@@ -51,7 +52,9 @@ body {
 .sketch-pad {
     height: 500px;
     width: 600px;
-    background: rgb(138, 189, 138);
+    background: rgb(255, 252, 252);
+    /* border: 2px solid gray; */
+    /* box-shadow: 5px 5px grey; */
 }
 
 #color-picker {
@@ -74,13 +77,46 @@ button {
     border-radius: 10px;
 }
 
+button:hover {
+    cursor: pointer;
+    font-size: medium;
+    border: 1px solid rgb(226, 161, 22);
+    /* padding: 15px; */
+    /* width: 90%; */
+}
+
 label {
     margin-top: auto;
     margin-bottom: -15px;
+    font-size: 25px;
+    font-weight: 600;
 }
 
+/* for the range input */
 .dimensions {
     width: 70%;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 10px;
+    /* background: #7f6969; */
+    border: 2px solid rgb(73, 70, 70);
+    border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: rgb(73, 70, 70);
+    margin-top: -11px;
 }

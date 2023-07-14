@@ -27,6 +27,7 @@ for (var i = 0; i < buttons.length; i++) {
     });
 }
 
+
 // function for color picker button selector
 colorModeButton.addEventListener("click", () => {
     colorBox(colorPicker.value);
@@ -44,7 +45,11 @@ let picker = colorPicker.addEventListener("change", () => {
 
 // function for random color
 rainbowButton.addEventListener("click", () => {
-    getRainbow()
+    // getRainbow()
+    // randomColorBox()
+    if (rainbowButton.classList.contains('selected')) {
+        randomColorBox()
+    }
 })
 
 // function to erase a div's background
@@ -88,7 +93,7 @@ function getSquares(rows = 16) {
     for (let i = 0; i < rows * columns; i++) {
         box = document.createElement("div");
         box.classList.add("box");
-        box.style.outline = "solid grey";
+        box.style.outline = "none";
         sketchPad.appendChild(box);
     }
     // slider.addEventListener("change", () => { box.style.background = "" })
@@ -120,7 +125,9 @@ function colorBox(color = "black") {
 // function to restart sketch-pad after new user input
 function restart() {
     let boxes = document.querySelectorAll(".box");
-    boxes.forEach((box) => { box.style.background = "none" })
+    boxes.forEach((box) => { box.style.background = "none" });
+
+    buttons.forEach((button) => { button.classList.remove('selected') })
 }
 
 // function to get random rgb color 
@@ -131,11 +138,25 @@ function getRainbow() {
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     let randomColor = `rgb(${r}, ${g}, ${b})`;
-    // return randomColor
-    // return colorBox(randomColor)
-
-    boxes.forEach((box) => { box.addEventListener('mousemove', () => { colorBox(randomColor) }) })
-    // boxes.forEach((box) => { box.addEventListener('mousemove', () => {box.style.background = randomColor})
-    // boxes.forEach((box) => { box.addEventListener('mousemove', () => { box.style.background = randomColor }) })
+    return randomColor
 }
 
+
+// function to color each highlighted box
+function randomColorBox() {
+    let boxes = document.querySelectorAll(".box");
+
+    function colorChange(box) {
+        box.style.background = getRainbow()
+    }
+
+    boxes.forEach((box) => {
+        box.addEventListener('mousemove', (e) => {
+            if (e.buttons === 1) {
+                //this cancel the event to propagate/spread aka drag the selection
+                e.preventDefault();
+                colorChange(box);
+            }
+        })
+    })
+}
