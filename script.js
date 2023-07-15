@@ -15,6 +15,7 @@ colorPicker.value = '#1d7177';
 // colorPicker.value = '#d36536';
 // colorPicker.value = '#815546';
 // colorPicker.value = '#8b8455';
+// colorPicker.value = '#5f5a59';
 
 // set the color-picker input background color on start to the above val
 colorPicker.style.background = colorPicker.value;
