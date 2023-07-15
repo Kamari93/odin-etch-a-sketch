@@ -209,7 +209,11 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .dark-mode input[type=range]::-webkit-slider-thumb {
-    background-color: rgb(209, 203, 203);
+    background-color: rgb(244, 239, 239);
+}
+
+.dark-mode .sketch-pad {
+    box-shadow: 0 3px 10px rgba(231, 229, 229, 0.2);
 }
 
 .dark-mode button:hover {
