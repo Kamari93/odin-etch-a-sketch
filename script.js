@@ -13,6 +13,20 @@ let buttons = document.querySelectorAll("button");
 dimensions.textContent = `${slider.value} x ${slider.value} `;
 colorPicker.value = '#1d7177';
 // colorPicker.value = '#d36536';
+// colorPicker.value = '#815546';
+
+// DOM for Toggle
+const toggle = document.getElementById('toggle');
+const body = document.body;
+
+toggle.addEventListener('change', function () {
+    if (toggle.checked) {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+    }
+});
+
 colorPicker.style.background = colorPicker.value;
 
 // Add event listener to each button

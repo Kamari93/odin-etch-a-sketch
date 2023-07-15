@@ -14,23 +14,73 @@ body {
     /**hide horizontal*/
 }
 
+
 .title {
     margin-bottom: -30px;
     margin-left: 140px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: -10px;
 }
 
 .title h1 {
     font-size: 70px;
     letter-spacing: 9px;
     font-weight: 800;
-    /* width: 900px; */
     width: 100%;
 }
 
+.toggle-container {
+    margin-bottom: -10px;
+    margin-left: auto;
+    margin-right: 10px;
+}
 
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: #ccc; */
+    background-color: #5d5757;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* slider background after click */
+.toggle-label input:checked+.toggle-slider {
+    /* background-color: rgb(206, 212, 212); */
+    background-color: rgb(247, 251, 251);
+}
+
+.toggle-label input:checked+.toggle-slider:before {
+    transform: translateX(20px);
+    background: grey;
+}
 
 .main-container {
     /* background: rgb(195, 201, 219); */
@@ -151,4 +201,13 @@ input[type="color"]::-webkit-color-swatch {
     margin-left: 180px;
     font-size: 15px;
     margin-bottom: 5px;
+}
+
+.dark-mode {
+    background: rgb(76, 75, 75);
+    color: rgb(200, 205, 209);
+}
+
+.dark-mode input[type=range]::-webkit-slider-thumb {
+    background-color: rgb(209, 203, 203);
 }
