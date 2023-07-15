@@ -121,6 +121,7 @@ body {
     width: 35%;
     /* background: brown; */
     padding: 10%;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.2);
 }
 
 #color-picker input {
